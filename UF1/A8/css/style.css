@@ -1,0 +1,68 @@
+body{
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Ubuntu', 'Liberation Sans', sans-serif;
+    color: #333333;
+}
+
+#cookies{
+    text-align: center;
+}
+
+#si, #boton{
+    background-color: white;
+    width: 150px;
+    padding:10px;
+    border-color: black;
+    font-size: 16px;
+}
+
+#no{
+    background-color: black;
+    width: 150px;
+    padding:10px;
+    color: white;
+    font-size: 16px;
+}
+
+#form{
+    margin:auto;
+    width: 400px;
+    padding:50px;
+    font-size: 16px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+
+}
+
+#form label{
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+#form input[type="text"]{
+    width:180px;
+    height: 25px;
+	padding:3px 10px;
+	border:1px solid grey;
+	border-radius:3px;
+	background-color:white;
+    margin:20px 0 20px 0;
+}
+
+#form input[type="password"]{
+    width:180px;
+    height: 25px;
+	padding:3px 10px;
+	border:1px solid grey;
+	border-radius:3px;
+	background-color:white;
+    margin:20px 0 20px 0;
+}
+
+span{
+    display:block;
+}
