@@ -40,12 +40,14 @@
       </div>
     </header>
 
-    <div id="saluda" class="position-absolute text-right">
+    <div id="saluda" class="position-absolute">
         <div id="tanca" class="rounded-circle">
             <a href="#" id="hideSaluda" >Tanca</a>
         </div>
         <form action="#">
-            <input type="text" name="" id="">
+            <input type="text" name="" id="" placeholder="Nombre">
+            <input type="text" name="" id="" placeholder="Email">
+
         </form>
     </div>
    

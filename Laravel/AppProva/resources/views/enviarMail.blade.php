@@ -1,1 +1,0 @@
-<div>Name: {{ $name }}</div>
