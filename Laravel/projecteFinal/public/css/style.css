@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+
+
 body{
     background-color: #e1e7dd;
     font-family: 'Questrial';
@@ -7,10 +9,15 @@ body{
 }
 
 h1{
-    font-size:32px;
+    font-size:38px;
 }
 
 h2{
+    font-size:30px;
+    margin-bottom: 50px;
+}
+
+h3{
     font-size:24px;
 }
 
@@ -24,15 +31,42 @@ a:hover{
     text-decoration: none;
 }
 
-header{
-
-    padding-top: 50px;
-    padding-left:100px;
-    padding-right: 100px;
+td, th{
+    width: 400px;
 }
 
-header img{
+th{
+    text-align: center;
+}
+
+header{
+    padding-top: 50px;
+    padding-left:30px;   
+}
+
+#logo img{
     width: 200px;
+}
+
+#auth{
+    margin-top:15px;
+    display: inline-flex;
+}
+
+#auth div{
+    margin-top: 7px;
+}
+
+#fons{
+    top: 0;
+    left: 0;
+    background-color: #392b1b;
+    height: 100%;
+    width:81% ;
+    display:none;
+    padding:20px; 
+    opacity: 30%;
+
 }
 
 #saluda{
@@ -42,14 +76,15 @@ header img{
     height: 100%;
     width:19%;
     display:none;
-    padding:20px;  
+    padding:20px; 
+    color:white;
 }
 
 #tanca{
     float:right;
     background-color:  #9e724e;
     width:min-content;
-    height:9%;
+    height:80px;
     padding-top: 26px;
 }
 
@@ -62,4 +97,382 @@ header img{
 }
 
 
+#saluda form{
+    margin-top: 125px;
+    
+}
 
+#saluda form input[type=text],
+#saluda form  input[type=email] 
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	width: 275px;
+	outline: none;
+    color: white;
+    margin-bottom: 15px;
+}
+#saluda form  textarea{
+	background: transparent;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid white;
+	width: 275px;
+	overflow: hidden;
+    resize:none;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#saluda form input[type=submit]{
+    background-color: white;
+    width:100%;
+}
+
+i{
+    color: white;
+    font-size: 130%;
+}
+
+#social{
+    margin-top: 150px;
+}
+
+#social p{
+    margin-bottom: 0px;
+}
+
+#contact{
+    padding-left: 100px;
+}
+
+.authForm{
+    width: auto;
+    margin: 0 auto;
+    margin-top:25px;
+    border-style: solid; 
+    border-width: 3px;
+    border-color: #d1c5b8;
+    padding:15px;
+    text-align: center;  
+}
+
+.authForm textarea{
+    resize:none;
+    width: 60%;
+}
+
+.authForm button{
+    background-color:#d1c5b8 ;
+    margin-top: 20px;;
+}
+
+#password{
+    margin-right: 40px;
+}
+
+#nameReg{
+    margin-right: 12px;
+}
+
+#passwordReg{
+    margin-right: 40px;
+}
+
+#password_confirmationReg{
+    margin-right: 20px;
+}
+
+
+.authForm ul{
+    list-style: none;
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.nav > li {
+    float:left;
+}
+
+.nav li a {
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li ul {
+    background-color:#d1c5b8;
+    border-style: solid; 
+    border-width: 3px;
+    border-color: #9e724e;
+    display:none;
+    position:absolute;
+    min-width:140px;
+    right:100px;
+    
+}
+
+.nav li:hover > ul {
+    display:block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+hr{
+    color: #9e724e;
+    width:75%;
+    margin: 0px;
+    padding: 0px;
+    text-align:left;
+    margin-left: 0;
+}
+
+nav{
+    margin-left: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color:black;
+}
+
+#home, #equipo, #admins, #editar{
+   margin-top: 50px;
+}
+
+#añadirAdmin{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#añadirAdmin input[type=submit]{
+    margin-top: 20px;
+}
+
+#admins{
+    text-align: center;
+}
+
+
+table{
+    margin:0 auto;
+}
+
+#nombre{
+    margin-right: 12px;
+}
+
+#contraseña{
+    margin-right: 44px;
+}
+
+#contraseña_confirmation{
+    margin-right: 128px;
+}
+
+
+#servicios div{
+    width: 45%;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 8%;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.infoProyecto{
+    display:none;
+    margin-top: 15px;
+}
+
+#listaProyectos{
+    width: 100%;
+}
+
+
+#listaProyectos a{
+    float: right;
+    padding:0px;
+   
+}
+
+#listaProyectos hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:100%;
+}
+
+#listaProyectos i{
+    color: red;
+}
+
+
+
+.container{
+    margin-bottom: 50px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+
+
+@media(max-width: 1450px) and (min-width:990px){
+    .flex-column {
+        -ms-flex-direction: row!important;
+        flex-direction: row!important;
+    }
+
+    nav{
+        margin:0 auto;
+        width:50%;
+    }
+
+    #navbarSupportedContent ul{
+        margin:0 auto;
+    
+    }
+    .text-xl-right{
+        text-align: center!important;
+    }
+}
+
+
+
+@media (max-width: 1450px)   {
+    header{
+        padding-top: 30px;
+        padding-left:0px;
+        padding-right: 0px;
+        position:static;
+    }
+
+    a{
+        padding-right:5px;
+    }
+    
+    #showSaluda {
+        display: none;
+    }
+
+    label{
+        display:block;
+    }
+
+    #logo{
+        text-align: center;
+    }
+    #password, #nameReg, #passwordReg, #password_confirmationReg, #nombre, #contraseña,  #contraseña_confirmation{
+        margin-right: 0px;
+    }
+    
+
+    .fixed-bottom{
+        position:static;
+    }
+    
+    .sticky-top{
+        position:static;
+    }
+
+   
+}
+@media (max-width: 990px)   {
+    .fixed-bottom {
+        position: static;
+    }
+
+    nav{
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+    #servicios div{
+        width: 100%;
+        padding-left:0%;
+       
+    }
+}
