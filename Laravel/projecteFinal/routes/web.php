@@ -51,3 +51,9 @@ Route::get('/eliminarUsuario/{id}', [UsuarioController::class, 'destroy']) -> na
 Route::get('/añadirProyecto', [ProjecteController::class, 'create'])->middleware(['auth'])->name('añadirProyecto');
 
 Route::post('/guardarProyecto', [ProjecteController::class, 'store']) -> name("guardarProyecto");
+
+Route::get('/editarProyecto/{id}', [ProjecteController::class, 'edit'])->middleware(['auth'])->name('editarProyecto');
+
+Route::post('/actualizaProyecto/{id}', [ProjecteController::class, 'update']) -> name("actualizaProyecto");
+
+Route::get('/eliminarImagenProyecto/{id}', [ProjecteController::class, 'destroy']) -> name("eliminarImagenProyecto");

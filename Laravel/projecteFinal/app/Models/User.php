@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Admin;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(){
+        $admins = Admin::all();
+
+        foreach($admins as $admin){
+            if($admin["email"]==$this->email){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

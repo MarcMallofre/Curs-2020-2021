@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\User;
+use App\Models\Projecte;
 
 
 class AdminController extends Controller
@@ -17,13 +18,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::all();
-        $data["admins"] = $admins;
-
-        $users = User::all();
-        $data["users"] = $users;
-
         if(Auth::user()->id==1){
+            $admins = Admin::all();
+            $data["admins"] = $admins;
+
+            $users = User::all();
+            $data["users"] = $users;
             return view('administradores', $data);
   
         }else{
@@ -111,7 +111,11 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        Admin::find($id)->delete();
+        if(Auth::user()->id==1){
+            Projecte::where('admin_id', $id)->update(['admin_id' => null]);
+
+            Admin::find($id)->delete();
+        }
 
         return redirect()->route('administradores');
     }

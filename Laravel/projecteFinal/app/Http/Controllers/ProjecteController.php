@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Projecte;
 use App\Models\Admin;
+use App\Models\User;
+use App\Models\ImatgeProjecte;
 
 class ProjecteController extends Controller
 {
@@ -15,7 +17,7 @@ class ProjecteController extends Controller
      */
     public function index()
     {
-        $proyectos = Projecte::all();
+        $proyectos = Projecte::with('imagenes')->orderBy('id', 'desc')->take(5)->get();
         $data["proyectos"] = $proyectos;
 
         $admins = Admin::all();
@@ -31,14 +33,12 @@ class ProjecteController extends Controller
      */
     public function create()
     {
-        $admins = Admin::all();
-
-        foreach($admins as $admin){
-            if($admin["email"]==Auth::user()->email){
-                return view('añadirProyecto');
-            }
+        if (Auth::user()->isAdmin()){
+            return view('añadirProyecto');
+        }else{
+            return redirect()->route('home');
         }
-        return redirect()->route('home');
+        
     }
 
     /**
@@ -60,15 +60,28 @@ class ProjecteController extends Controller
         $validatedData=$request->validate([
             'nombreProyecto' => 'required|string|max:255',
             'descripcionProyecto' => 'required|string',
+            'imagenProyecto.*' => 'required|image'
         ]);
 
+    
         $proyecto = new Projecte;
-        
         $proyecto->setAttribute('nom', $request["nombreProyecto"]);
         $proyecto->setAttribute('descripcio', $request["descripcionProyecto"]);
         $proyecto->setAttribute('admin_id', $id);
         $proyecto->save();
-
+ 
+        foreach($request->file("imagenProyecto") as $imagen){
+           
+            $nombreImagen=time().$imagen->getClientOriginalName();
+            $imagenProyecto = new ImatgeProjecte;
+            $imagenProyecto->setAttribute('nom', $nombreImagen);
+            $imagenProyecto->setAttribute('ruta', 'img/proyectos/'.$proyecto->id.'/'.$nombreImagen);
+            $imagenProyecto->setAttribute('projecte_id', $proyecto->id);
+            $imagenProyecto->save();
+    
+            $imagen->move(public_path().'/img/proyectos/'.$proyecto->id, $nombreImagen);
+        }
+        
         return view('añadirProyecto');
     }
 
@@ -91,7 +104,13 @@ class ProjecteController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::user()->isAdmin()){
+            $proyecto=Projecte::find($id);
+            return view('editarProyecto', $proyecto);
+
+        }else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -103,7 +122,32 @@ class ProjecteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData=$request->validate([
+            'nombreProyecto' => 'required|string|max:255',
+            'descripcionProyecto' => 'required|string',
+            'imagenProyecto.*'  => 'image'
+        ]);
+
+        $proyecto = Projecte::find($id);
+        $proyecto->nom = $request["nombreProyecto"];
+        $proyecto->descripcio = $request["descripcionProyecto"];
+        $proyecto->save();
+
+        if($request['imagenProyecto']){
+            foreach($request->file("imagenProyecto") as $imagen){
+           
+                $nombreImagen=time().$imagen->getClientOriginalName();
+                $imagenProyecto = new ImatgeProjecte;
+                $imagenProyecto->setAttribute('nom', $nombreImagen);
+                $imagenProyecto->setAttribute('ruta', 'img/proyectos/'.$proyecto->id.'/'.$nombreImagen);
+                $imagenProyecto->setAttribute('projecte_id', $proyecto->id);
+                $imagenProyecto->save();
+        
+                $imagen->move(public_path().'/img/proyectos/'.$proyecto->id, $nombreImagen);
+            }
+        }
+
+        return view('editarProyecto', $proyecto);
     }
 
     /**
@@ -114,6 +158,12 @@ class ProjecteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (Auth::user()->isAdmin()){
+            $imatge=ImatgeProjecte::find($id);
+            unlink($imatge->ruta);
+            $imatge->delete();
+        }
+        return redirect()->route('home');
+        
     }
 }

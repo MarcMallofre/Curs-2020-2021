@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Projecte;
 use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
@@ -116,7 +118,21 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         if($id==Auth::user()->id){
-            User::find($id)->delete();
+            $usuario=User::find($id);
+
+            $usuario->delete();
+
+            $admins = Admin::all();
+
+            foreach($admins as $admin){
+                if($admin["email"]==Auth::user()->email){
+                    $idAdmin=$admin["id"];
+                }
+            }
+
+            Projecte::where('admin_id', $idAdmin)->update(['admin_id' => null]);
+            
+            Admin::where('email', $usuario->email)->delete();
         }
         return redirect()->route('home');
     }

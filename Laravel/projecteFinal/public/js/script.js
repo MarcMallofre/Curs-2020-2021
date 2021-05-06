@@ -42,5 +42,7 @@ function showSlides(n) {
 
 
 $('.abrirProyecto').click(function() {
-  $(this).next().next().next().toggle();
+  $id=$(this).attr('id');
+
+  $('#info'+$id).toggle();
 });

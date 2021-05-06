@@ -152,12 +152,35 @@
         <h2>Proyectos</h2>
         <div id="listaProyectos">
         @foreach($proyectos as $proyecto)
-            <span class="abrirProyecto"><strong>Nombre: </strong>{{$proyecto->nom}}</span> 
-            <a href="" ><i class="fas fa-trash-alt"></i></a> <br>
-            <div class="infoProyecto">
+            
+            <span class="abrirProyecto" id="{{$proyecto->id}}"><strong>Nombre: </strong>{{$proyecto->nom}}</span> 
+
+            @foreach($admins as $admin)
+            @auth
+                @if(Auth::user()->email == $admin->email)
+                <a href="{{route('editarProyecto', $proyecto->id)}}" ><i class="fas fa-pencil-alt"></i></a> <br>
+                @endif
+            @endauth
+            @endforeach
+
+            
+            <div class="infoProyecto" id="info{{$proyecto->id}}">
                 <p> <strong>Descripción: </strong> {{$proyecto->descripcio}}</p>
+                @foreach ($proyecto->imagenes as $imagen)
+
+
+                @foreach($admins as $admin)
+                    @auth
+                        @if(Auth::user()->email == $admin->email)
+                        <a href="{{route('eliminarImagenProyecto', $imagen->id)}}" ><i class="fas fa-trash-alt"></i></a>
+                        @endif
+                    @endauth
+                @endforeach
+                <img src="{{$imagen->ruta}}" alt="Imagen identificativa del proyecto" class="img-fluid">   
+                @endforeach
             </div>
             <hr>
+            
         @endforeach
 
 

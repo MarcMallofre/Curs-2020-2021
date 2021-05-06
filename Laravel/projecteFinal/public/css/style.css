@@ -296,6 +296,12 @@ table{
     margin-top: 15px;
 }
 
+.infoProyecto img{
+    margin-bottom: 20px;
+}
+
+
+
 #listaProyectos{
     width: 100%;
 }
@@ -314,7 +320,7 @@ table{
 }
 
 #listaProyectos i{
-    color: red;
+    color: blue;
 }
 
 
