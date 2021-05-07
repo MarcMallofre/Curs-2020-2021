@@ -239,15 +239,19 @@ hr{
 
 nav{
     margin-left: 40px;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
+}
+
+.navbar{
+    width:100px;
 }
 
 .navbar-light .navbar-nav .nav-link{
     color:black;
+    width:100px;
 }
 
-#home, #equipo, #admins, #editar{
+#home, #admins, #editar{
    margin-top: 50px;
 }
 
@@ -291,6 +295,13 @@ table{
     text-align: justify;
 }
 
+
+
+.abrirProyecto:hover{
+    cursor: pointer;
+}
+
+
 .infoProyecto{
     display:none;
     margin-top: 15px;
@@ -300,12 +311,21 @@ table{
     margin-bottom: 20px;
 }
 
+#proyectos a{
+    padding-left: 0px;
+    padding-top: 0px;
 
+}
 
 #listaProyectos{
     width: 100%;
+    margin-top: 25px;
 }
 
+.infoProyecto span{
+    float: right;
+    padding-left: 5px;
+}
 
 #listaProyectos a{
     float: right;
@@ -315,7 +335,7 @@ table{
 
 #listaProyectos hr{
     margin-top: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     width:100%;
 }
 
@@ -323,11 +343,81 @@ table{
     color: blue;
 }
 
-
-
-.container{
+footer{
+    padding-top: 30px;
+}
+footer div{
+    width: 45%;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 20%;
     margin-bottom: 50px;
 }
+
+footer a{
+    padding:0;
+}
+
+footer i{
+    color:black;
+}
+
+#equipoDIV, #serviciosDIV{
+    background-color: #bbb;
+    padding-top: 30px;
+}
+
+#proyectosDIV{
+    background-color: #d1c5b8;
+    padding-top: 30px;  
+}
+
+#contacta input[type=text],
+#contacta input[type=email] 
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	width: 50%;
+	outline: none;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+#contacta #sociales input[type=text],
+#contacta #sociales input[type=email]{
+    width: 25%;
+    
+}
+
+#contacta #infoEmpresa input[type=submit]{
+    background-color: white;
+}
+
+#contacta #infoEmpresa {
+    text-align:left;
+}
+
+#contacta #infoEmpresa label{
+    width:40%;
+    margin-left: 25px;
+}
+
+#sociales{
+    text-align:right;
+}
+
+#instagram, #facebook, #linkedin, #enlaceWeb{
+    margin-right: 340px;
+}
+
+#datosContacto{
+    text-align: center;
+}
+
+
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -463,6 +553,42 @@ table{
     
     .sticky-top{
         position:static;
+    }
+
+    #contacta input[type=text],
+    #contacta input[type=email] 
+    {
+        width: 80%;
+        margin-left: 0px;
+        text-align:center;
+    }
+
+    #contacta #sociales input[type=text],
+    #contacta #sociales input[type=email]{
+        text-align:center;
+        width: 50%;
+        
+    }
+
+    #contacta #infoEmpresa {
+        text-align:center;
+    }
+
+    #contacta #infoEmpresa label{
+        width:100%;
+        margin-left: 0px;
+    }
+
+    #sociales{
+        text-align:center;
+    }
+
+    #instagram, #facebook, #linkedin, #enlaceWeb{
+        margin-right: 0px;
+    }
+
+    #datosContacto{
+        text-align: center;
     }
 
    

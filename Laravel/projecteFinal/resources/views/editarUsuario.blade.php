@@ -86,7 +86,6 @@
     <br><br>
     <a class="btn btn-danger" onclick="return confirm('¿Estas seguro que quieres eliminar la cuenta? Esta acción no se pue deshacer')" href="{{route('eliminarUsuario', $id)}}">Borrar usuario</a>
     </form>
-
 </div>
 
 <script src="../js/script.js"></script>

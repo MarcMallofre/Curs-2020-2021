@@ -133,7 +133,7 @@ class ProjecteController extends Controller
         $proyecto->descripcio = $request["descripcionProyecto"];
         $proyecto->save();
 
-        if($request['imagenProyecto']){
+        if($request->hasfile('imagenProyecto')){
             foreach($request->file("imagenProyecto") as $imagen){
            
                 $nombreImagen=time().$imagen->getClientOriginalName();

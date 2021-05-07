@@ -118,7 +118,7 @@ return [
     'string' => 'El campo :attribute tiene que ser un texto.',
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => 'Este :attribute ya esta registrado.',
-    'uploaded' => 'The :attribute failed to upload.',
+    'uploaded' => 'Error al subir :attribute.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 

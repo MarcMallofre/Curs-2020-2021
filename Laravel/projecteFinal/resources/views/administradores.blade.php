@@ -58,6 +58,7 @@
     <th>Email</th>
     <th>Eliminar</th>
     @foreach($admins as $admin)
+        @if($admin->id!=1)
         <tr>
             <td>{{$admin->nom}}</td>
             <td>{{$admin->email}}</td>
@@ -69,6 +70,7 @@
         
             </td>
         </tr>
+        @endif
     @endforeach
 </table>
 
@@ -78,7 +80,9 @@
     <select name="users" id="users">
         <option value="">--Selecciona usuario--</option>
         @foreach($users as $user)
+        @if($user->id!=1)
         <option value="{{$user->id}}">{{$user->name}}, {{$user->email}}</option>
+        @endif
         @endforeach
     </select><br>
     <input type="submit" value="Añadir">
