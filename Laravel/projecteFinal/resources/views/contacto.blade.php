@@ -32,6 +32,7 @@
 
                         @if(Auth::user()->id==1)
                         <li><a href="{{ route('administradores') }}" >Adminstradores</a></li>
+                        <li><a href="{{ route('productos') }}" >Productos</a></li>
                         @endif
 						<li>
                             <form method="POST" action="{{ route('logout') }}">

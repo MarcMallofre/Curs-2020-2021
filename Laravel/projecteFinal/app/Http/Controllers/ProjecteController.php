@@ -60,7 +60,8 @@ class ProjecteController extends Controller
         $validatedData=$request->validate([
             'nombreProyecto' => 'required|string|max:255',
             'descripcionProyecto' => 'required|string',
-            'imagenProyecto.*' => 'required|image'
+            'imagenProyecto' => 'required',
+            'imagenProyecto.*' => 'image'
         ]);
 
     

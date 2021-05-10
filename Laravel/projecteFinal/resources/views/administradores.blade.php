@@ -30,6 +30,7 @@
                     <li><a href="{{ route('editarUsuario', Auth::user()->id ) }}"  >Editar datos</a></li>
                     @if(Auth::user()->id==1)
                     <li><a href="{{ url('/administradores') }}" >Adminstradores</a></li>
+                    <li><a href="{{ route('productos') }}" >Productos</a></li>
                     @endif
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
@@ -53,7 +54,7 @@
 
 <div id="admins" class="container">
 <h2>Administradores</h2>
-<table border=1>
+<table border=1 class="table">
     <th>Nombre</th>
     <th>Email</th>
     <th>Eliminar</th>

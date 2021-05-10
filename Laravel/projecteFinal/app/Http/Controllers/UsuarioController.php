@@ -127,12 +127,10 @@ class UsuarioController extends Controller
             foreach($admins as $admin){
                 if($admin["email"]==Auth::user()->email){
                     $idAdmin=$admin["id"];
+                    Projecte::where('admin_id', $idAdmin)->update(['admin_id' => null]);
+                    Admin::where('email', $usuario->email)->delete();
                 }
-            }
-
-            Projecte::where('admin_id', $idAdmin)->update(['admin_id' => null]);
-            
-            Admin::where('email', $usuario->email)->delete();
+            }               
         }
         return redirect()->route('home');
     }

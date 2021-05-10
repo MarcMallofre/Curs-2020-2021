@@ -31,6 +31,7 @@
 
                         @if(Auth::user()->id==1)
                         <li><a href="{{ route('administradores') }}" >Adminstradores</a></li>
+                        <li><a href="{{ route('productos') }}" >Productos</a></li>
                         @endif
 						<li>
                             <form method="POST" action="{{ route('logout') }}">
@@ -54,14 +55,14 @@
     <div class="container authForm">
         <h2>Añadir proyecto</h2>
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <form action="{{route('guardarProyecto')}}" method="POST" enctype="multipart/form-data" >
             @csrf
             <label for="nombreProyecto">Nombre</label>

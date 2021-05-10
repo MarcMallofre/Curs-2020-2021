@@ -31,6 +31,7 @@
 
                         @if(Auth::user()->id==1)
                         <li><a href="{{ route('administradores') }}" >Adminstradores</a></li>
+                        <li><a href="{{ route('productos') }}" >Productos</a></li>
                         @endif
 						<li>
                             <form method="POST" action="{{ route('logout') }}">
@@ -84,7 +85,10 @@
 <br>
     <input type="submit" value="Editar">
     <br><br>
-    <a class="btn btn-danger" onclick="return confirm('¿Estas seguro que quieres eliminar la cuenta? Esta acción no se pue deshacer')" href="{{route('eliminarUsuario', $id)}}">Borrar usuario</a>
+    </form>
+    <form action="{{route('eliminarUsuario', $id)}}" method="POST">
+    @csrf
+    <input type="submit" value="Borrar usuario" class="btn btn-danger" onclick="return confirm('¿Estas seguro que quieres eliminar la cuenta? Esta acción no se pue deshacer')">
     </form>
 </div>
 

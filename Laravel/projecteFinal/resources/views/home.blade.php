@@ -34,6 +34,7 @@
             
                         @if(Auth::user()->id==1)
                         <li><a href="{{ route('administradores') }}" >Adminstradores</a></li>
+                        <li><a href="{{ route('productos') }}" >Productos</a></li>
                         @endif
 						<li>
                             <form method="POST" action="{{ route('logout') }}">
@@ -119,30 +120,30 @@
             <div class="slideshow-container">
 
                 <div class="mySlides ">
-                <div class="numbertext">1 / 3</div>
-                <img src="img/home.jpg" style="width:100%">
-                <div class="text">Marc Mallofré</div>
+                    <div class="numbertext">1 / 3</div>
+                    <img src="img/home.jpg" style="width:100%">
+                    <div class="text">Marc Mallofré</div>
                 </div>
 
                 <div class="mySlides ">
-                <div class="numbertext">2 / 3</div>
-                <img src="img/home.jpg" style="width:100%">
-                <div class="text">Eric Rodriguez</div>
+                    <div class="numbertext">2 / 3</div>
+                    <img src="img/home.jpg" style="width:100%">
+                    <div class="text">Eric Rodriguez</div>
                 </div>
 
                 <div class="mySlides ">
-                <div class="numbertext">3 / 3</div>
-                <img src="img/equipo/carla.jpg" style="width:100%">
-                <div class="text">Carla Soria</div>
+                    <div class="numbertext">3 / 3</div>
+                    <img src="img/equipo/carla.jpg" style="width:100%">
+                    <div class="text">Carla Soria</div>
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                </div>
-                <br>
+            </div>
+            <br>
 
-                <div style="text-align:center">
+            <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 

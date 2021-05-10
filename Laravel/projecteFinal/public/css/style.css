@@ -311,7 +311,7 @@ table{
     margin-bottom: 20px;
 }
 
-#proyectos a{
+#proyectos a, #productos a{
     padding-left: 0px;
     padding-top: 0px;
 
@@ -416,8 +416,31 @@ footer i{
     text-align: center;
 }
 
+#nombreProducto{
+    margin-right: 16px;
+}
 
+.fichaProducto{
+    width:30%;
+    display:inline-block;
+    margin:10px;
+}
 
+#tablaProductos{
+    text-align: center;
+}
+
+#tablaProductos i{
+    color: red;
+}
+
+.table td, .table th {
+    border-top: 1px solid black;
+}
+
+.row {
+    margin-right: 0px;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -542,7 +565,7 @@ footer i{
     #logo{
         text-align: center;
     }
-    #password, #nameReg, #passwordReg, #password_confirmationReg, #nombre, #contraseña,  #contraseña_confirmation{
+    #password, #nameReg, #passwordReg, #password_confirmationReg, #nombre, #contraseña,  #contraseña_confirmation, #nombreProducto{
         margin-right: 0px;
     }
     
@@ -589,6 +612,16 @@ footer i{
 
     #datosContacto{
         text-align: center;
+    }
+
+    footer div{
+        width: 100%;
+        display:block;
+        padding-left: 0%;
+    }
+
+    td, th{
+        width: auto;
     }
 
    
