@@ -6,6 +6,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProjecteController;
 use App\Http\Controllers\ProducteController;
 use App\Http\Controllers\ImatgeProducteController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +74,5 @@ Route::post('/editarProducto/{id}', [ProducteController::class, 'edit']) -> name
 Route::post('/actualizaProducto/{id}', [ProducteController::class, 'update']) -> name("actualizaProducto");
 
 Route::get('/producto/{id}', [ProducteController::class, 'show'])->name('producto');
+
+Route::post('/send/email', [MailController::class, 'mail'])->name('enviarMail');

@@ -33,7 +33,7 @@ class ProducteController extends Controller
 
     public function index()
     {
-        $productos = Producte::with('imagenProducto')->get();
+        $productos = Producte::with('imagenProducto')->orderBy('nom', 'asc')->paginate(3);
         $data["productos"] = $productos;
 
         $admins = Admin::all();
@@ -101,8 +101,10 @@ class ProducteController extends Controller
      */
     public function show($id)
     {
-        $producto=Producte::find($id)->imagenesProducto()->get();
-        return view('producto', $producto);
+        $data["producto"]=Producte::find($id);
+        $data["imagenes"]=Producte::find($id)->imagenesProducto;
+        
+        return view('producto', $data);
     }
 
     /**
