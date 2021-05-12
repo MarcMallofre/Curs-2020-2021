@@ -4,7 +4,7 @@
 
 @section("seccion")
 
-<div class="container authForm" id="editar">
+<div class="container authForm titulo" >
     <h2>Editar datos personales</h2>
 
     @if ($errors->any())

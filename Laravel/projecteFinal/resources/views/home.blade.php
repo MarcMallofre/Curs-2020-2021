@@ -20,7 +20,7 @@
         </div>
     </nav>
 
-    <div class="container" id="home">
+    <div class="container titulo">
         <img src="img/home.jpg" alt="Imatge presentació empresa" class="img-fluid">
         <h1>Mi página web</h1>
     </div>

@@ -15,6 +15,6 @@ return [
 
     'failed' => 'Los datos no coinciden con la base de datos.',
     'password' => 'La contraseña es incorrecta.',
-    'throttle' => 'Has superado el número de intentos para inciar sesión. Por favor esperra :seconds segundos.',
+    'throttle' => 'Has superado el número de intentos para inciar sesión. Por favor espera :seconds segundos.',
 
 ];

@@ -71,8 +71,10 @@
         <div id="tanca" class="rounded-circle">
             <a href="#" id="hideSaluda" >Cierra</a>
         </div>
+
         
-        <form action="#">
+        
+        <form action="{{route('enviarMailSaluda')}}" method="POST">
             @csrf
             <h2>Escribenos</h2>
             <input type="text" name="nombre" id="nombre" placeholder="Nombre">

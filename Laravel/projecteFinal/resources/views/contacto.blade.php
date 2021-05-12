@@ -8,8 +8,17 @@
     </div>
 
     <div class="container authForm">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <h2>Briefing exprés</h2>
-        <form action="{{route('enviarMail')}}" method="POST" id="contacta">
+        <form action="{{route('enviarMailBriefing')}}" method="POST" id="contacta">
             @csrf
             <div id="infoEmpresa">
 

@@ -75,4 +75,7 @@ Route::post('/actualizaProducto/{id}', [ProducteController::class, 'update']) ->
 
 Route::get('/producto/{id}', [ProducteController::class, 'show'])->name('producto');
 
-Route::post('/send/email', [MailController::class, 'mail'])->name('enviarMail');
+Route::post('/enviarMailBriefing', [MailController::class, 'mailBriefing'])->name('enviarMailBriefing');
+
+Route::post('/enviarMailSaluda', [MailController::class, 'mailSaluda'])->name('enviarMailSaluda');
+

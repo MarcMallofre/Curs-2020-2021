@@ -252,10 +252,6 @@ nav{
     width:100px;
 }
 
-#home, #admins, #editar{
-   margin-top: 50px;
-}
-
 #añadirAdmin{
     margin-top: 50px;
     text-align: center;
@@ -268,7 +264,6 @@ nav{
 #admins{
     text-align: center;
 }
-
 
 table{
     margin:0 auto;
@@ -431,12 +426,17 @@ footer i{
     text-align: center;
 }
 
+.tablaPrecio{
+    width:auto;
+}
+
 #tablaProductos i{
     color: red;
 }
 
 .table td, .table th {
     border-top: 1px solid black;
+    vertical-align: middle;
 }
 
 .row {
@@ -475,6 +475,14 @@ footer i{
 }
 #menuEnlace{
     padding: 0px;
+}
+
+#productosCRUD{
+    overflow-x:auto;
+}
+
+.titulo{
+    margin-top: 50px;
 }
 
 /* Slideshow container */
