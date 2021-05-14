@@ -48,7 +48,7 @@
                     <li><a href="{{ route('register') }}">Registrar</a></li>
                 @endif
             @endauth
-            <li><a id="carrito"  href="#" >Carrito <i class="fas fa-shopping-cart"></i></a></li>
+            <li><a id="carrito"  href="{{route('carrito')}}" >Carrito <i class="fas fa-shopping-cart"></i></a></li>
             </ul>            
         </div>
     @endif

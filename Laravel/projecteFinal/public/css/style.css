@@ -419,11 +419,17 @@ footer i{
 .fichaProducto{
     width:30%;
     display:inline-block;
-    margin:10px;
+    margin-top:20px;
+    margin-right: 20px;
 }
+
 
 #tablaProductos{
     text-align: center;
+}
+
+#tablaProductos a{
+    padding:0px;
 }
 
 .tablaPrecio{
@@ -453,7 +459,7 @@ footer i{
 
 #productoImgDesc{
     display: flex;
-  align-items: center;
+    align-items: flex-start;
   
   justify-content: space-around;
 }
@@ -466,7 +472,7 @@ footer i{
     color:white;
 }
 
-#cantidadProducto{
+#quantity{
     width: 60px;
 }
 
@@ -483,6 +489,12 @@ footer i{
 
 .titulo{
     margin-top: 50px;
+}
+
+#botonComprar{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 /* Slideshow container */
@@ -659,20 +671,15 @@ footer i{
         text-align: center;
     }
 
-    footer div{
-        width: 100%;
-        display:block;
-        padding-left: 0%;
-    }
+    
 
-    td, th{
-        width: auto;
-    }
+   
 
     
 
    
 }
+
 @media (max-width: 990px)   {
     .fixed-bottom {
         position: static;
@@ -696,6 +703,7 @@ footer i{
         width:100%;
         display:block;
         margin:0px;
+        margin-top: 10px;
     }
 
     #producto img{
@@ -710,5 +718,11 @@ footer i{
 
     #productoImgDesc form{
         text-align: center;
+    }
+
+    footer div{
+        width: 100%;
+        display:block;
+        padding-left: 0%;
     }
 }

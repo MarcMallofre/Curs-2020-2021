@@ -34,9 +34,14 @@
                 <h3>{{$producto->nom}}</h3>
                 <p style="white-space: pre-line;">{{$producto->descripcio}}</p>
                 <p>{{$producto->preu}} €</p>
-                <form action="">
+
+                <form action="{{route('añadirCarrito')}}" method="post">
+                    @csrf
                     <label for="cantidadProducto">Cantidad</label>
-                    <input type="number" name="cantidadProducto" id="cantidadProducto" value="1">
+                    <input type="number" name="quantity" id="quantity" value="1" max="5" min="1">
+                    <input type="hidden" name="id" value="{{$producto->id}}">
+                    <input type="hidden" name="name" value="{{$producto->nom}}">
+                    <input type="hidden" name="price" value="{{$producto->preu}}">
                     <input type="submit" value="Añadir al carrito">
                 </form>
             </div>

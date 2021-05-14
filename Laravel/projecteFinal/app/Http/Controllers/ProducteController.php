@@ -42,6 +42,22 @@ class ProducteController extends Controller
         return view('tienda', $data);
     }
 
+    public function busqueda(Request $request)
+    {
+        if($request->busqueda==""){
+            return redirect()->route('tienda');
+        }else{
+            $productos = Producte::where("nom", "LIKE", "%{$request->busqueda}%")->with('imagenProducto')->orderBy('nom', 'asc')->paginate(3);
+            $data["productos"] = $productos;
+    
+            $admins = Admin::all();
+            $data["admins"] = $admins;
+    
+            return view('tienda', $data);
+        }
+      
+    }
+
     /**
      * Show the form for creating a new resource.
      *

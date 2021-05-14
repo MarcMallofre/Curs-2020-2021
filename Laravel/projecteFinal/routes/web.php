@@ -7,6 +7,8 @@ use App\Http\Controllers\ProjecteController;
 use App\Http\Controllers\ProducteController;
 use App\Http\Controllers\ImatgeProducteController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +81,16 @@ Route::post('/enviarMailBriefing', [MailController::class, 'mailBriefing'])->nam
 
 Route::post('/enviarMailSaluda', [MailController::class, 'mailSaluda'])->name('enviarMailSaluda');
 
+Route::post('/añadirCarrito', [CartController::class, 'store'])->name('añadirCarrito');
+
+Route::post('/eliminarCarrito/{cart}', [CartController::class, 'destroy'])->name('eliminarCarrito');
+
+Route::post('/actualizarCarrito/{id}', [CartController::class, 'update'])->name('actualizarCarrito');
+
+Route::get('/carrito', [CartController::class, 'index'])->name('carrito');
+
+Route::post('/busqueda', [ProducteController::class, 'busqueda'])->name('busqueda');
+
+Route::get('/pagar', [PaymentController::class, 'index'])->name('pagar');
+
+Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');
