@@ -91,6 +91,6 @@ Route::get('/carrito', [CartController::class, 'index'])->name('carrito');
 
 Route::post('/busqueda', [ProducteController::class, 'busqueda'])->name('busqueda');
 
-Route::get('/pagar', [PaymentController::class, 'index'])->name('pagar');
+Route::get('/pagar', [PaymentController::class, 'index'])->middleware(['auth'])->name('pagar');
 
 Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');

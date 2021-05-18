@@ -36,7 +36,7 @@
                 </form><br>
                 <form method="POST" id="" action="{{route('eliminarProducto', $producto->id)}}">
                     @csrf
-                    <input type="submit" value="Eliminar">
+                    <input type="submit" value="Eliminar" onclick="return confirm('¿Estas seguro que quieres eliminar el producto? Esta acción no se pue deshacer')">
                 </form>
             </td>
         </tr>

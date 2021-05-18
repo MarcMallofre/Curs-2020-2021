@@ -11,7 +11,7 @@
             @csrf
             <div class="input-group">
                 <div class="form-outline">
-                    <input type="search" name="busqueda" id="busqueda" class="form-control" />
+                    <input type="search" name="busqueda" id="busqueda" class="form-control" placeholder="Buscar..."/>
                 </div>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-search"></i>

@@ -81,9 +81,13 @@
 </div>
 
 <div class="container" id="botonComprar">
+    @auth
     <form action="{{route('pagar')}}">
         <input type="submit" value="Comprar">
     </form>
+    @else
+    <p>Inicia sesión para comprar</p>
+    @endif
 </div>
 
 

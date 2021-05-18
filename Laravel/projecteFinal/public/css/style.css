@@ -6,6 +6,7 @@ body{
     background-color: #e1e7dd;
     font-family: 'Questrial';
     font-size: 20px;
+ 
 }
 
 h1{
@@ -361,6 +362,14 @@ footer i{
 #equipoDIV, #serviciosDIV{
     background-color: #bbb;
     padding-top: 30px;
+    
+   
+}
+
+.fullAltura{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
 }
 
 #proyectosDIV{
@@ -495,6 +504,15 @@ footer i{
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+}
+
+.card{
+    background-color: transparent;
+    border: none;
+}
+
+#pago div{
+
 }
 
 /* Slideshow container */
