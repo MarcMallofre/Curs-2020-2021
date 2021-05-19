@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Comanda;
 
 class ComandaController extends Controller
 {
@@ -14,7 +15,15 @@ class ComandaController extends Controller
      */
     public function index()
     {
-        //
+
+        if (Auth::user()->isAdmin()){
+            $pedidos = Comanda::with('usuario')->get();
+            $data["pedidos"] = $pedidos;
+
+            return view('pedidos', $data);
+        }else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -46,7 +55,14 @@ class ComandaController extends Controller
      */
     public function show($id)
     {
-        //
+        if (Auth::user()->isAdmin()){
+            $data["pedido"]=Comanda::find($id);
+            $data["detalles"]=Comanda::find($id)->detallComanda;
+
+            return view('pedido', $data);
+        }else{
+            return redirect()->route('home');
+        }
     }
 
     /**

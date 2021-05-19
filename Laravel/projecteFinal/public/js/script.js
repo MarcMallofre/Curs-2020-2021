@@ -47,5 +47,5 @@ $('.abrirProyecto').click(function() {
     $('.infoProyecto').hide();
   }
 
-  
+  $('#info'+$id).toggle();
 });

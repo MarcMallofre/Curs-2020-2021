@@ -35,6 +35,7 @@
                         @if(Auth::user()->id==1)
                         <li><a href="{{ route('administradores') }}" >Adminstradores</a></li>
                         <li><a href="{{ route('productos') }}" >Productos</a></li>
+                        <li><a href="{{ route('pedidos') }}" >Pedidos</a></li>
                         @endif
 						<li>
                             <form method="POST" action="{{ route('logout') }}">
@@ -49,7 +50,7 @@
 				</li>
 			
 				
-                
+                <li><a href="#" id="showSaluda">Salúdanos</a></li>
                 
                 @else
                 <li><a  href="{{ route('login') }}" >Iniciar sesión</a></li>
@@ -60,7 +61,7 @@
                     @endif
                 @endauth
 
-                <li><a href="#" id="showSaluda">Salúdanos</a></li>
+                
                 </ul>            
             </div>
         @endif
@@ -92,6 +93,21 @@
             </div>
         </div> 
     </div>
+
+    <nav class="navbar navbar-expand-lg fixed-bottom navbar-light  ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto flex-column" >
+                <li class="nav-item"><a class="nav-link"  href="home#equipo">Equipo</a></li>
+                <li class="nav-item"><a class="nav-link"  href="home#proyectos">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link"  href="home#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link"  href="{{ route('tienda') }}">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link"  href="home#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
     @section('seccion')
       

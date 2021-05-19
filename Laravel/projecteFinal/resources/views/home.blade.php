@@ -5,21 +5,6 @@
 @section("seccion")
 
 
-    <nav class="navbar navbar-expand-lg fixed-bottom navbar-light  ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto flex-column" >
-                <li class="nav-item"><a class="nav-link"  href="#equipo">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link"  href="#proyectos">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link"  href="#servicios">Servicios</a></li>
-                <li class="nav-item"><a class="nav-link"  href="{{ route('tienda') }}">Tienda</a></li>
-                <li class="nav-item"><a class="nav-link"  href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-
 
 <div class="fullAltura">
     <div class="container titulo">
@@ -153,16 +138,16 @@
 
 
     <footer id="contacto" class="container">
-        <h2>Contacta</h2>
+
         <div >
             <p>Contacta con nosotros en:</p>
-            <p>+34666666666</p>
-            <p>info@agencia.com</p>
-            <a href="{{route('contacto')}}">O envíanos un correo</a>
+            <p><i class="fas fa-phone-alt"></i>+34666666666</p>
+            <p><i class="fas fa-envelope"></i>info@agencia.com</p>
+            <a href="{{route('contacto')}}"><i class="fas fa-at"></i>O aquí tienes un birefing</a>
         </div>
         <div>
             <p>Vilanova i la Geltrú, Barcelona</p>
-            <span>Síguenos: </span>
+            <p>Síguenos: </p>
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>

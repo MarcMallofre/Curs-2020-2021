@@ -30,7 +30,7 @@
                 @endforeach
             @endif
             </div>
-            <div>
+            <div id="descripcionProducto">
                 <h3>{{$producto->nom}}</h3>
                 <p style="white-space: pre-line;">{{$producto->descripcio}}</p>
                 <p>{{$producto->preu}} €</p>

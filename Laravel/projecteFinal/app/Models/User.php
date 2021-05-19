@@ -53,4 +53,9 @@ class User extends Authenticatable
 
         return false;
     }
+
+    public function comandas()
+    {
+        return $this->hasMany('App\Models\Comanda');
+    }
 }

@@ -15,7 +15,13 @@ class Producte extends Model
     }
     
 
-    public function imagenProducto() {
+    public function imagenProducto() 
+    {
         return $this->hasOne('App\Models\ImatgeProducte');
+    }
+
+    public function detallComanda()
+    {
+        return $this->hasMany('App\Models\DetallComanda');
     }
 }

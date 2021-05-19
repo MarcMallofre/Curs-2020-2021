@@ -9,6 +9,7 @@ use App\Http\Controllers\ImatgeProducteController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ComandaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -94,3 +95,7 @@ Route::post('/busqueda', [ProducteController::class, 'busqueda'])->name('busqued
 Route::get('/pagar', [PaymentController::class, 'index'])->middleware(['auth'])->name('pagar');
 
 Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');
+
+Route::get('/pedidos', [ComandaController::class, 'index'])->middleware(['auth'])->name('pedidos');
+
+Route::get('/pedido/{id}', [ComandaController::class, 'show'])->middleware(['auth'])->name('pedido');

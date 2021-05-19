@@ -5,7 +5,7 @@
 @section("seccion")
    
     <div class="container" id="productos">
-        <h2>Nuestros productos</h2>
+        <h2>Nuestras ilustraciones</h2>
 
         <form action="{{route('busqueda')}}" method="post">
             @csrf

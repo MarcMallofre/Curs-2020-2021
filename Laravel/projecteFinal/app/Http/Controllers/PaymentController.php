@@ -10,8 +10,7 @@ use Stripe\Charge;
 use App\Models\Comanda;
 use App\Models\DetallComanda;
 use Illuminate\Support\Facades\Auth;
-
-
+use Mail;
 
 
 class PaymentController extends Controller
@@ -43,7 +42,7 @@ class PaymentController extends Controller
         ]);
 
         try {
-                        Stripe::setApiKey(env('STRIPE_SECRET'));
+            Stripe::setApiKey(env('STRIPE_SECRET'));
 
             $customer = Customer::create(array(
                 'email' => $request->Email,
@@ -80,8 +79,29 @@ class PaymentController extends Controller
                 $detallComanda->save();
             }
 
+            $to_name = 'Agencia';
+            $to_email = 'mmallofree@fp.insjoaquimmir.cat';
+            $data = array(
+                'nombre'=>$request["Nombre"], 
+                'primerApellido'=>$request["PrimerApellido"],
+                'segundoApellido'=>$request["SegundoApellido"],
+                "email" => $request["Email"],
+                "telefono" => $request["Telefono"], 
+                "direccion" => $request["Direccion"], 
+                "ciudad" => $request["Ciudad"], 
+                "codigoPostal" => $request["CodigoPostal"], 
+                "provincia" => $request["Provincia"], 
+           
+            );
+            
+            Mail::send('mails/mailCompra', $data, function($message) use ($to_name, $to_email) {
+                $message->to($to_email, $to_name)
+                ->subject('Nueva Compra');
+                $message->from('mmallofree@fp.insjoaquimmir.cat','Agencia');
+            });
             
             Cart::clear();
+
             return view("compraOk");
        
         } catch (\Exception $ex) {
