@@ -9,7 +9,7 @@ use App\Models\ImatgeProducte;
 class CartController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Devuelve la vista del carrito
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +29,7 @@ class CartController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Añade el producto seleccionado al carrito, con una imagen asociada a él.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -74,7 +74,7 @@ class CartController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza los datos del carrito
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -93,7 +93,7 @@ class CartController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina el producto seleccionado del carrito
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

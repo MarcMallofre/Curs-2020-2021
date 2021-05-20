@@ -1,18 +1,24 @@
+
+
+//Evento click que muestra el formulario de saludo
 $('#showSaluda').click(function() {
     $('#saluda').show();
     $('#fons').show();
 });
 
+//Evento click en el boton de cerrar que esconde el formulario de saludo
 $('#hideSaluda').click(function() {
     $('#saluda').hide();
     $('#fons').hide();
 });
 
+//Evento click en el fondo que esconde el formulario de saludo
 $('#fons').click(function() {
     $('#saluda').hide();
     $('#fons').hide();
 });
 
+//Carrusel
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -40,7 +46,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-
+//Evento click para abrir el proyecto y esconder los demas.
 $('.abrirProyecto').click(function() {
   $id=$(this).attr('id');
   for(i=0; i<$('.infoProyecto').length; i++){

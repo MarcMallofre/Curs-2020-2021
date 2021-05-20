@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class ProducteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Devuelve crud con los productos y las imagenes asociadas a ellos, si eres admin.
+     * Si no, redirecciona a la home
      *
      * @return \Illuminate\Http\Response
      */
-
 
     public function productos()
     {
@@ -31,16 +31,27 @@ class ProducteController extends Controller
     } 
 
 
+    /**
+     * Devuelve los productos con una imagen para visualizarlos en la tienda.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
     public function index()
     {
         $productos = Producte::with('imagenProducto')->orderBy('nom', 'asc')->paginate(3);
         $data["productos"] = $productos;
 
-        $admins = Admin::all();
-        $data["admins"] = $admins;
-
         return view('tienda', $data);
     }
+
+    /**
+     * Devuelve el resultado de la búsqueda.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 
     public function busqueda(Request $request)
     {
@@ -50,16 +61,14 @@ class ProducteController extends Controller
             $productos = Producte::where("nom", "LIKE", "%{$request->busqueda}%")->with('imagenProducto')->orderBy('nom', 'asc')->paginate(3);
             $data["productos"] = $productos;
     
-            $admins = Admin::all();
-            $data["admins"] = $admins;
-    
             return view('tienda', $data);
         }
       
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Devuelve la vista con el formulario para añadir un producto si eres admin.
+     * Si no, redirecciona a la home.
      *
      * @return \Illuminate\Http\Response
      */
@@ -73,7 +82,7 @@ class ProducteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Guarda un nuevo producto con los datos validados y las imagenes correspondientes
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -110,7 +119,7 @@ class ProducteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra el producto seleccionado con sus imagenes
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -124,7 +133,8 @@ class ProducteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Devuelve la vista con el formulario para editar un producto si eres admin.
+     * Si no, redirecciona a la home.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -141,7 +151,7 @@ class ProducteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza un producto con los datos validados y sus imagenes
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -180,7 +190,7 @@ class ProducteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Borra un producto y sus imagenes si eres admin. También borra las imagenes de la carpeta del servidor
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

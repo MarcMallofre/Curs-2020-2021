@@ -53,7 +53,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Devuelve la vista con el formulario para editar datos de usuario si la id existe y coincide. 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -70,7 +70,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza los datos de un usuario con los datos validados
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -110,7 +110,8 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Borra un usuario si las id coinciden. 
+     * Tambien lo elimina de los administradores en caso de que lo sea.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

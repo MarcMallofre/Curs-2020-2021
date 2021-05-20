@@ -11,7 +11,7 @@ use App\Models\ImatgeProjecte;
 class ProjecteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Devuelve los ultimos 5 proyectos guardados
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,7 +27,7 @@ class ProjecteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Devuelve la vista con el formulario para añadir un proyecto
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,7 +42,7 @@ class ProjecteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Guarda un nuevo proyecto con los datos validados y sus imagenes.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -98,7 +98,8 @@ class ProjecteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Devuelve la vista con el formulario para editar un proyecto si eres admin.
+     * Si no, redirecciona a la home
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -115,7 +116,7 @@ class ProjecteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza un proyecto con los datos validados y sus imagenes
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -152,7 +153,7 @@ class ProjecteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Borra la imagen del proyecto seleccionada si eres admin.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

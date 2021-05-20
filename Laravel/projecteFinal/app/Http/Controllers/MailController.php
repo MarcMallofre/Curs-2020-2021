@@ -7,6 +7,12 @@ use App\Mail\CloudHostingProduct;
 
 class MailController extends Controller
 {    
+    /**
+     * Envia mail a la agencia con los datos validados del formulario de briefing
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function mailBriefing(Request $request)
     {
         $validatedData=$request->validate([
@@ -56,6 +62,12 @@ class MailController extends Controller
 
     }
 
+    /**
+     * Envia mail a la agencia con los datos validados del formulario de saludo
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function mailSaluda(Request $request)
     {
         

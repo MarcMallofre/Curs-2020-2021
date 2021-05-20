@@ -12,7 +12,8 @@ use App\Models\Projecte;
 class AdminController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra todos los administradores y usuarios de la web para el superusuario (ID=1).
+     * Si el usuario que intenta acceder no es superusuario, se redirecciona a la home. 
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,7 +43,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Obtiene los datos del usuario seleccionado y si no lo es, lo convierte en administrador
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -104,7 +105,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina el administrador seleccionado para el superusuario. Si esta asociado a algun proyecto, el campo pasará a ser null
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

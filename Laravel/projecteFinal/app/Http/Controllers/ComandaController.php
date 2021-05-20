@@ -9,7 +9,8 @@ use App\Models\Comanda;
 class ComandaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra todos los pedidos si eres administrador.
+     * Si no, redirecciona al home
      *
      * @return \Illuminate\Http\Response
      */
@@ -17,7 +18,7 @@ class ComandaController extends Controller
     {
 
         if (Auth::user()->isAdmin()){
-            $pedidos = Comanda::with('usuario')->get();
+            $pedidos = Comanda::with('usuario')->orderBy('id', 'desc')->get();
             $data["pedidos"] = $pedidos;
 
             return view('pedidos', $data);
@@ -48,7 +49,8 @@ class ComandaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra el pedido seleccionado con sus detalles si eres administrador.
+     * Si no, redirecciona al home.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

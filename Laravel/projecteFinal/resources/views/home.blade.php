@@ -130,7 +130,7 @@
             </div>
             <div>
                 <h3>Marketing</h3>
-                <p>Te ayudamos a realizar todo lo que has planead.</p>
+                <p>Te ayudamos a realizar todo lo que has planeado.</p>
             </div>        
         </div>
     </div>
@@ -152,6 +152,7 @@
             <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
+    
 
     
 @stop

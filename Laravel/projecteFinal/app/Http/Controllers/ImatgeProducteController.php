@@ -74,7 +74,8 @@ class ImatgeProducteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Borra la imagen seleccionada de un producto si eres administrador y la borra de la carpeta.
+     * 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

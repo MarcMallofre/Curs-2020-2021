@@ -186,6 +186,10 @@ i{
     margin-right: 20px;
 }
 
+#password_confirmation{
+    margin-right: 115px;
+}
+
 
 .authForm ul{
     list-style: none;
@@ -375,8 +379,6 @@ footer i{
 
 .fullAltura{
     height: 100vh;
-    display: flex;
-    justify-content: space-around;
 }
 
 #proyectosDIV{
@@ -524,8 +526,9 @@ footer i{
 
 #pedidos i{
     color:black;
-    
 }
+
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -623,6 +626,8 @@ footer i{
     .text-xl-right{
         text-align: center!important;
     }
+
+    
 }
 
 
@@ -701,10 +706,14 @@ footer i{
         text-align: center;
     }
 
-    
+    .fullAltura{
+        height: auto;
+    }
 
    
-
+    .navbar {
+        width:auto;
+    }
     
 
    
@@ -750,9 +759,19 @@ footer i{
         text-align: center;
     }
 
-    footer div{
-        width: 100%;
-        display:block;
-        padding-left: 0%;
+   
+}
+
+@media (min-width: 1200px){
+
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1650px){
+
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
     }
 }

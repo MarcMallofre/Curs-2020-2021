@@ -14,6 +14,7 @@ class ImatgeProjecte extends Model
 
     protected $table = 'imatges_projectes';
 
+    //Relacion ImagenProyecto-Proyecto
     public function proyecto()
     {
         return $this->belongsTo('App\Models\Projecte;', 'projecte_id');

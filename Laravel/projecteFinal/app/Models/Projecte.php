@@ -11,6 +11,7 @@ class Projecte extends Model
 {
     use HasFactory;
 
+    //Relacion proyecto-imagenes
     public function imagenes()
     {
         return $this->hasMany('App\Models\ImatgeProjecte');

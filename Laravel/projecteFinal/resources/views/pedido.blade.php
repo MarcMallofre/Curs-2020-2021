@@ -33,8 +33,6 @@
     <p><b>Producto:</b> {{$detalle->productos->nom}}. <b>Cantidad: </b>{{$detalle->quantitat}}</p>
 
     @endforeach
-
-    
 </div>
 
 @stop

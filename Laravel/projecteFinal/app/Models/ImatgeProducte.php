@@ -11,6 +11,7 @@ class ImatgeProducte extends Model
 
     protected $table = 'imatges';
 
+    //Relacion ImagenProducto-Producto
     public function producto()
     {
         return $this->belongsTo('App\Models\Producte;', 'producte_id');

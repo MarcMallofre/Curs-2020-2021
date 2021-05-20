@@ -16,6 +16,7 @@ use Mail;
 class PaymentController extends Controller
 {
 
+    // Si el carrito no está vacío, devuelve la vista para pagar. Si no, redirecciona a la tienda.
     public function index()
     {
         if((!Cart::isEmpty())){
@@ -25,7 +26,15 @@ class PaymentController extends Controller
         }
         
     }
-  
+    /**
+     * Realiza el pago con los datos validados del formulario de pago.
+     * Crea una nueva comanda con sus detalles.
+     * Envia un mail a la agencia notificando una nueva compra.
+     * Vacia el carrito de compra.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function makePayment(Request $request)
     {
 
@@ -99,6 +108,15 @@ class PaymentController extends Controller
                 ->subject('Nueva Compra');
                 $message->from('mmallofree@fp.insjoaquimmir.cat','Agencia');
             });
+
+            $to_name = $request['Nombre'];
+            $to_email = $request['Email'];
+
+            Mail::send('mails/mailCliente', $data, function($message) use ($to_name, $to_email) {
+                $message->to($to_email, $to_name)
+                ->subject('Compra hecha');
+                $message->from('mmallofree@fp.insjoaquimmir.cat','Agencia');
+            });
             
             Cart::clear();
 
@@ -107,7 +125,5 @@ class PaymentController extends Controller
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-          
-        return back();
     }
 }
