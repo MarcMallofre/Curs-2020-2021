@@ -41,7 +41,7 @@
     </form>
     <form action="{{route('eliminarUsuario', $id)}}" method="POST">
     @csrf
-    <input type="submit" value="Borrar usuario" class="btn btn-danger" onclick="return confirm('¿Estas seguro que quieres eliminar la cuenta? Esta acción no se pue deshacer')">
+    <input type="submit" value="Borrar usuario" class="btn btn-danger" onclick="return confirm('¿Estas seguro que quieres eliminar la cuenta? Esta acción no se puede deshacer')">
     </form>
 </div>
 

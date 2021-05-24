@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
-
-
 body{
-    background-color: #e1e7dd;
+    background-color:rgb(32, 31, 101);
     font-family: 'Questrial';
     font-size: 20px;
- 
+    color:white;
 }
 
 h1{
@@ -23,12 +21,12 @@ h3{
 }
 
 a{
-    color: black;
+    color: white;
     padding: 15px;
 }
 
 a:hover{
-    color:white;
+    color:black;
     text-decoration: none;
 }
 
@@ -43,6 +41,28 @@ th{
 header{
     padding-top: 50px;
     padding-left:30px;   
+}
+
+input[type=text],
+input[type=email],
+input[type="password"],
+input[type="number"],
+textarea
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	outline: none;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.panel input[type=text],
+.panel input[type=email],
+.panel input[type="password"],
+.panel input[type="number"]{
+    margin-left: 0px;
 }
 
 #logo img{
@@ -73,7 +93,7 @@ header{
 #saluda{
     bottom: 0;
     right: 0;
-    background-color: #392b1b;
+    background-color: rgb(32, 31, 101);
     height: 100%;
     width:19%;
     display:none;
@@ -83,14 +103,14 @@ header{
 
 #tanca{
     float:right;
-    background-color:  #9e724e;
+    background-color:  rgb(122, 237, 208);
     width:min-content;
     height:80px;
     padding-top: 26px;
 }
 
 #tanca:hover{
-    background-color:  #774e33;
+    background-color:  rgb(246, 153, 192);
 }
 
 #tanca:hover a{
@@ -210,10 +230,10 @@ ul, ol {
 }
 
 .nav li ul {
-    background-color:#d1c5b8;
+    background-color:rgb(122, 237, 208);
     border-style: solid; 
     border-width: 3px;
-    border-color: #9e724e;
+    border-color: rgb(246, 153, 192);
     display:none;
     position:absolute;
     min-width:140px;
@@ -255,12 +275,12 @@ nav{
 }
 
 .navbar-light .navbar-nav .nav-link{
-    color:black;
+    color:white;
     width:100px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
-    color:white;
+    color:black;
 }
 
 #añadirAdmin{
@@ -278,6 +298,11 @@ nav{
 
 table{
     margin:0 auto;
+   
+}
+
+.table{
+    color:white;
 }
 
 #nombre{
@@ -294,15 +319,13 @@ table{
 
 
 #servicios div{
-    width: 45%;
+    width: 48%;
     display:inline-block;
     vertical-align: top;
     padding-left: 8%;
     margin-bottom: 50px;
     text-align: justify;
 }
-
-
 
 .abrirProyecto:hover{
     cursor: pointer;
@@ -350,9 +373,11 @@ table{
     color: blue;
 }
 
-footer{
+#footerDiv{
     padding-top: 30px;
+    background-color: rgb(32, 31, 101);
 }
+
 footer div{
     width: 45%;
     display:inline-block;
@@ -366,24 +391,37 @@ footer a{
 }
 
 footer i{
-    color:black;
+    color:white;
     padding-right: 10px;
 }
 
-#equipoDIV, #serviciosDIV{
-    background-color: #bbb;
+#equipoDIV {
+    background-color: rgb(32, 31, 101);
+ 
+}
+
+#serviciosDIV{
     padding-top: 30px;
-    
-   
+    background-color: rgb(246, 153, 192);
 }
 
 .fullAltura{
-    height: 100vh;
+    position:relative;
+    top:-120px;
+    background-image: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: auto;
+    padding-top: 66.64%;
 }
 
 #proyectosDIV{
-    background-color: #d1c5b8;
+    background-color: rgb(122, 237, 208);
     padding-top: 30px;  
+}
+
+#proyectosDIV i{
+    color:white;
 }
 
 #contacta input[type=text],
@@ -459,7 +497,8 @@ footer i{
 }
 
 .table td, .table th {
-    border-top: 1px solid black;
+  
+    border: 1px solid white;
     vertical-align: middle;
 }
 
@@ -487,11 +526,11 @@ footer i{
 }
 
 #carrito i{
-    color:black;
+    color:white;
 }
 
 #carrito:hover i{
-    color:white;
+    color:black;
 }
 
 #quantity{
@@ -524,10 +563,44 @@ footer i{
     border: none;
 }
 
-#pedidos i{
-    color:black;
+#pago .form-control{
+    height: fit-content;
+    font-size: 2rem;
 }
 
+.form-control:focus{
+    background-color: transparent;
+    color:white;
+}
+
+#pedidos i{
+    color:white;
+}
+
+#imagenesProyecto{
+    display:flex; 
+    justify-content:space-around;
+}
+
+#imagenesProyecto img{
+    width:450px;
+}
+
+#briefing:hover{
+    color: rgb(122, 237, 208);
+}
+
+.panel{
+    background-color: transparent;
+    border: 0px;
+}
+
+#servicios img{
+    width:95px;
+    float:left;
+    margin-right:10px;
+
+}
 
 
 /* Slideshow container */
@@ -626,7 +699,7 @@ footer i{
     .text-xl-right{
         text-align: center!important;
     }
-
+    
     
 }
 
@@ -637,6 +710,10 @@ footer i{
         padding-top: 30px;
         padding-left:0px;
         padding-right: 0px;
+        position:static;
+    }
+
+    .fullAltura{
         position:static;
     }
 
@@ -706,18 +783,18 @@ footer i{
         text-align: center;
     }
 
-    .fullAltura{
-        height: auto;
-    }
+  
 
    
     .navbar {
         width:auto;
     }
-    
 
+  
    
 }
+
+
 
 @media (max-width: 990px)   {
     .fixed-bottom {
@@ -731,6 +808,7 @@ footer i{
 
     #carrito, #volver, #nombre{
         padding:0px;
+        padding-right: 5px;
     }
 
     #servicios div{
@@ -759,19 +837,50 @@ footer i{
         text-align: center;
     }
 
-   
+    #descripcionProducto{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    footer div{
+        width: 100%;
+        display:block;
+        padding-left: 0%;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    #imagenesProyecto img{
+       width:300px
+    }
+  
+}
+
+@media (max-width: 770px){
+    #imagenesProyecto{
+        display:flex; 
+        flex-direction: column;
+    }
+    #imagenesProyecto img{
+        width:auto;
+     }
 }
 
 @media (min-width: 1200px){
-
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1000px;
     }
 }
 
 @media (min-width: 1650px){
-
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1140px;
+    }
+}
+
+@media (max-width: 575px){
+    #logo{
+        display: flex;
+        align-items: center;
     }
 }

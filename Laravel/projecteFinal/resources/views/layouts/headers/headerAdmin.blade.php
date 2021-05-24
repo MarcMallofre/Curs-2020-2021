@@ -25,7 +25,7 @@
                 
                 <ul class="nav">
                 @auth
-				<li><a href="#">{{ Auth::user()->name }}</a>
+				<li><a href="#" id="nombre">{{ Auth::user()->name }}</a>
 					<ul>
                         <li><a href="{{ route('editarUsuario', Auth::user()->id ) }}">Editar datos</a></li>
 
@@ -46,7 +46,7 @@
 				</li>
                 @endauth
 
-                <li><a href="{{url()->previous() }}">Volver</a></li>
+                <li><a href="{{url()->previous() }}" id="volver">Volver</a></li>
                 </ul>            
             </div>
         @endif

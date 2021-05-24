@@ -54,4 +54,6 @@ $('.abrirProyecto').click(function() {
   }
 
   $('#info'+$id).toggle();
+ 
 });
+
