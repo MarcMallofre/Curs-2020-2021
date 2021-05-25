@@ -47,6 +47,7 @@ input[type=text],
 input[type=email],
 input[type="password"],
 input[type="number"],
+input[type="search"],
 textarea
 {
 	background: transparent;
@@ -81,7 +82,7 @@ textarea
 #fons{
     top: 0;
     left: 0;
-    background-color: #392b1b;
+    background-color: rgb(32, 31, 101);
     height: 100%;
     width:81% ;
     display:none;
@@ -230,7 +231,7 @@ ul, ol {
 }
 
 .nav li ul {
-    background-color:rgb(122, 237, 208);
+    background-color:#74E2C6;
     border-style: solid; 
     border-width: 3px;
     border-color: rgb(246, 153, 192);
@@ -276,7 +277,7 @@ nav{
 
 .navbar-light .navbar-nav .nav-link{
     color:white;
-    width:100px;
+  
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -375,7 +376,7 @@ table{
 
 #footerDiv{
     padding-top: 30px;
-    background-color: rgb(32, 31, 101);
+    background-color: #5042a4;
 }
 
 footer div{
@@ -412,11 +413,11 @@ footer i{
     background-repeat: no-repeat;
     background-size: 100%;
     height: auto;
-    padding-top: 66.64%;
+    padding-top: 62%;
 }
 
 #proyectosDIV{
-    background-color: rgb(122, 237, 208);
+    background-color:#74E2C6;
     padding-top: 30px;  
 }
 
@@ -568,9 +569,17 @@ footer i{
     font-size: 2rem;
 }
 
+.form-control{
+    border-radius: 0;
+}
+
 .form-control:focus{
     background-color: transparent;
     color:white;
+}
+
+.btn{
+    margin-left: 10px;
 }
 
 #pedidos i{
@@ -596,10 +605,10 @@ footer i{
 }
 
 #servicios img{
-    width:95px;
+    width:50px;
     float:left;
     margin-right:10px;
-
+    margin-top:8px;
 }
 
 

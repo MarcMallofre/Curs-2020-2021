@@ -186,7 +186,7 @@ class ProducteController extends Controller
             }
         }
 
-        return redirect()->route('tienda');
+        return redirect()->route('productos');
     }
 
     /**

@@ -17,7 +17,7 @@
                 <div class="slideshow-container" id="carusel">
                     @foreach($imagenes as $imagen)
                     <div class="mySlides ">
-                        <img src="../{{$imagen->ruta}}" alt="" class="img-fluid"> 
+                        <img src="../{{$imagen->ruta}}" alt="Imagen del producto" class="img-fluid"> 
                     </div>
                     @endforeach
                 

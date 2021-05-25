@@ -1,14 +1,17 @@
 @extends('layouts.headers.header')
 
-@section('title', 'Home')
+@section('title', 'Helway Studio')
 
 @section("seccion")
 
 
 
-<div class="fullAltura">
-  
-</div>
+    <div class="fullAltura">
+    
+    </div>
+    <div class="container">
+        <h1>Helway Studio</h1>
+    </div>
 
     <div id="equipoDIV">
         <div class="container" id="equipo">
@@ -17,19 +20,19 @@
 
                 <div class="mySlides ">
                     <div class="numbertext">1 / 3</div>
-                    <img src="img/equipo/marc.jpg" style="width:100%">
+                    <img src="img/equipo/marc.jpg" style="width:100%" alt="Imagen miembro equipo">
                     <div class="text">Marc Mallofré</div>
                 </div>
 
                 <div class="mySlides ">
                     <div class="numbertext">2 / 3</div>
-                    <img src="img/equipo/eric.jpg" style="width:100%">
+                    <img src="img/equipo/eric.jpg" style="width:100%" alt="Imagen miembro equipo">
                     <div class="text">Eric Rodriguez</div>
                 </div>
 
                 <div class="mySlides ">
                     <div class="numbertext">3 / 3</div>
-                    <img src="img/equipo/carla.jpg" style="width:100%">
+                    <img src="img/equipo/carla.jpg" style="width:100%" alt="Imagen miembro equipo">
                     <div class="text">Carla Soria</div>
                 </div>
 
@@ -153,7 +156,7 @@
             <p>Vilanova i la Geltrú, Barcelona</p>
             <p>Síguenos: </p>
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 </div> 

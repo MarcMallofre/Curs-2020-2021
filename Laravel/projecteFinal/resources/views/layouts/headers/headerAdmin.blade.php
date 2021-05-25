@@ -15,7 +15,7 @@
 <header class="row sticky-top">
 
       <div id="logo" class="col-sm-6 col-8 ">
-        <a href="{{ route('home') }}"><img src="img/logo.png" alt="Imagen logo de la empresa"></a>
+        <a href="{{ route('home') }}"><img src="img/logo.png" alt="Helway Studio Logo"></a>
       </div>
 
       <div class="col-sm-6 col-4 text-xl-right text-center">
@@ -25,7 +25,7 @@
                 
                 <ul class="nav">
                 @auth
-				<li><a href="#" id="nombre">{{ Auth::user()->name }}</a>
+				<li><a href="#" id="nombre" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
 					<ul>
                         <li><a href="{{ route('editarUsuario', Auth::user()->id ) }}">Editar datos</a></li>
 

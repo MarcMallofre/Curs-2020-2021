@@ -29,7 +29,7 @@
             <tr>
                 <td>
                     @foreach ($item->attributes as $key => $attribute)
-                    <a href="{{route('producto', $item->id)}}"><img src="{{$attribute}}" alt="" class="img-fluid"></a>
+                    <a href="{{route('producto', $item->id)}}"><img src="{{$attribute}}" alt="Imagen identificativa producto" class="img-fluid"></a>
                     @endforeach
                 </td>
                 <td> <a href="{{route('producto', $item->id)}}">{{$item->name}}</a> </td>
